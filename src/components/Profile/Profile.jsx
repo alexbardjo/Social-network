@@ -5,12 +5,12 @@ import ProfileInfo from "./ProfileInfo/ProfileInfo";
 
 
 const Profile = (props) => {
-    let {posts} = props;
-
-    return ( <div>
+    return (<div>
             <ProfileInfo/>
-            <MyPosts posts={posts}/>
-    </div>
+            <MyPosts posts={props.profilePage.posts}
+                     newPostText={props.profilePage.newPostText}
+                     dispatch={props.dispatch}/>
+        </div>
     );
 };
 
