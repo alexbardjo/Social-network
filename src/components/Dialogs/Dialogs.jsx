@@ -2,16 +2,13 @@ import React from "react";
 import s from './Dialogs.module.css';
 import DialogItem from "./DialogItem/DialogItem";
 import Message from "./Message/Message";
-import {addMessageActionCreator, updateNewMessageActionCreator} from "../../Redux/Dialogs-reducer";
 
 
 const Dialogs = (props) => {
-    let state = props.dialogsPage
-    let dialogsElements = state.dialogs.map(d => <DialogItem name={d.name} id={d.id} img={d.img}/>);
-    let messagesElements = state.messages.map(m => <Message message={m.message}/>);
+    let state = props.dialogsPage;
+    let dialogsElements = state.dialogs.map(d => <DialogItem name={d.name} id={d.id} img={d.img} key={d.id} />);
+    let messagesElements = state.messages.map(m => <Message message={m.message} key={m.id}/>);
 
-
-    let newPostElement = React.createRef(); // создание ссылки
 
     let onSendMessageClick = () => {
        props.sendMessage();

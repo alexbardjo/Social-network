@@ -12,7 +12,7 @@ import Settings from "./components/Settings/Settings";
 import Friends from "./components/Friends/Friends";
 import DialogsContainer from "./components/Dialogs/DialogsContainer";
 
-const App = (props) => {
+const App = () => {
     return (
             <div className='app-wrapper'>
                 <Header/>
